@@ -3,6 +3,8 @@ let reset = document.querySelector('#reset');
 
 createGrid(16);
 
+let test = Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256);
+
 function createGrid(side) {
     items = side * side;
     for (let i = 0; i < items; i++){
@@ -11,7 +13,9 @@ function createGrid(side) {
         divs.style.width = 960/side + 'px';
         // divs.style.outline = '1px solid black';
         divs.addEventListener('mouseover', () => {
-            divs.classList.add('color');
+            // divs.style.backgroundColor = "rgb(100, 100, 100)";
+            divs.style.backgroundColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ')';;
+            // divs.classList.add('color');
         });
         container.appendChild(divs);
     }
